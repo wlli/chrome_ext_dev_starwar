@@ -1,0 +1,26 @@
+body {
+        min-width: 357px;
+        overflow-x: hidden;
+      }
+
+img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      }
+.strikethrough {text-decoration: line-through;}
+
+#current_date{
+    font-size:18pt;
+}
+
+
+h2 {
+    //background-color: #e6d9bb;
+    text-decoration: underline;
+    text-shadow:5px 5px 10px black;
+}
+
+.customized {color: #ffffff;}

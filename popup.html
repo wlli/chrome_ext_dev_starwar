@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Star Wars To-do List *Time management * Productivity * To-do List*</title>
+    <link href = 'popup.css' rel="stylesheet" type="text/css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <script src="jquery-1.7.2.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- date picker -->
+    <link rel="stylesheet" href="jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css">
+    <script src="jquery-ui-1.10.2.custom///js/jquery-ui-1.10.2.custom.js"></script>
+  </head>
+
+  <body id='the_body' class='body'>
+    <div class="">
+      <h2 class="text-center customized">To-do List</h2>
+    </div>
+    <div id='date_label' class='input-prepend'>
+      <input type='text' id='current_date' class='span2' readonly font-weight='bold'>
+      <button class='btn btn-primary' id="cal_btn">Calendar</button>
+      
+    </div>
+
+    <div id='notification_checkbox_div'>
+      <label class='checkbox'>
+        <input type='checkbox' id='notification_cb'><span  class='customized'>Allow Desktop Notification</span>
+      </label>
+    </div>
+
+    <div id="datepicker_set"></div>
+
+    <div id='table_div'>
+      <table id="table" class="table table-bordered table-condensed customized">
+        <!--
+        <tr>
+          <th>Item</th>
+          <th>Venue</th>
+          <th>Time</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="checkbox_1" value="value1"><span>Dev</span></input></td>
+          <td>Home</td>
+          <td>14:20</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="checkbox_2" value="value2">Debug</input></td>
+          <td>Home</td>
+          <td>14:21</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="checkbox_3" value="value3">Test</input></td>
+          <td>Home</td>
+          <td>14:22</td>
+        </tr>
+        -->
+      </table>
+    </div>
+
+    <div id="add_button_div">
+      <div id="datepicker"></div>
+      <p id="btn_p"><button id="add_item" class="btn btn-primary" type="button">+ New Task</button></p>
+    </div>
+
+    <div id='toggle_bg_div' style="position:fixed; right:0px; bottom:0px;">
+      <button id='bg_toggle' class='btn-link'><i class='icon-picture icon-white'></i></button>
+    </div>
+
+    <p><font id="warning" class="text-error" style="background-color:white;"></font></p>
+
+    <script src="popup2.js"></script>
+  </body>
+
+</html>

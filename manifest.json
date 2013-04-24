@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Star Wars To-do List",
+  "description": "A simple to-do list with Star Wars themes. *Time management. To-do list.To-do list.To-do list.To-do list*",
+  "background": {
+    "page": "background.html",
+    "script": ["background.js"]},
+  "version": "1.0.3",
+  "icons": {  "16": "yoda.png",
+              "48": "yoda.png",
+              "128": "yoda.png" },
+
+  "browser_action": {
+    "default_icon": "yoda.png",
+    "default_popup": "popup.html",
+    "default_title": "Do It Now!"
+  },
+  "permissions": [
+    "storage",
+    "notifications",
+    "background"
+  ],
+  "web_accessible_resources": [
+    "yoda.png"
+  ]
+}
