@@ -6,7 +6,7 @@
   "background": {
     "page": "background.html",
     "script": ["background.js"]},
-  "version": "1.0.3",
+  "version": "1.0.4",
   "icons": {  "16": "yoda.png",
               "48": "yoda.png",
               "128": "yoda.png" },

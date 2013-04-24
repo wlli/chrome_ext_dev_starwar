@@ -404,31 +404,48 @@ document.addEventListener('DOMContentLoaded', function () {
 	 populate_table(future_date(6), 6);
 
 	 //start timer 
-	 // if(!content_loaded){
-	 // 	content_loaded = true;
-	 // 	chrome.runtime.getBackgroundPage(function(bg){bg.start_notification()});
-	 // }
-	 chrome.runtime.getBackgroundPage(function(bg){
-	 	if(bg.is_first_time()){
-	 		//bg.start_notification(); //no need any more, now bg js start itself
-	 		bg.set_first_time_false(); //negate the first_time boolean variable
-	 		//set up image count for the first time
-	 		chrome.storage.sync.set({"bg_img": "0"}, function(res){
-	 			console.log("Image count set!");
-	 			chrome.storage.sync.get("bg_img", function(result){
-					var img_num = result["bg_img"];
-					document.body.style.backgroundImage = "url('bg/"+bg_images[img_num]+"')";
-				});
-	 		});
-	 	}else{
-	 		//set up bg image according to storage data
-			chrome.storage.sync.get("bg_img", function(result){
-				var img_num = result["bg_img"];
-				document.body.style.backgroundImage = "url('bg/"+bg_images[img_num]+"')";
-			});
-	 	}
-	 });
+	 // chrome.runtime.getBackgroundPage(function(bg){
+	 // 	if(bg.is_first_time()){
+	 // 		//bg.start_notification(); //no need any more, now bg js start itself
+	 // 		bg.set_first_time_false(); //negate the first_time boolean variable
+	 // 		//set up image count for the first time
+	 // 		// chrome.storage.sync.set({"bg_img": "0"}, function(res){
+	 // 		// 	console.log("Image count set!");
+	 // 		// 	chrome.storage.sync.get("bg_img", function(result){
+		// 		// 	var img_num = result["bg_img"];
+		// 		// 	document.body.style.backgroundImage = "url('bg/"+bg_images[img_num]+"')";
+		// 		// });
+	 // 		// });
+	 // 	}else{
+	 // 		//set up bg image according to storage data
+		// 	chrome.storage.sync.get("bg_img", function(result){
+		// 		var img_num = result["bg_img"];
+		// 		//if never set in storage
+		// 		if(img_num == undefined){
+		// 			img_num = 0;
+		// 			chrome.storage.sync.set({"bg_img": "0"}, function(res){
+		// 				console.log("Image count set to 0!");
+		// 			});
+		// 		}
+		// 		document.body.style.backgroundImage = "url('bg/"+bg_images[img_num]+"')";
+		// 	});
+	 // 	}
+	 // });
 
+	 //set up bg image no matter if it's first time loading
+	 chrome.storage.sync.get("bg_img", function(result){
+		var img_num = result["bg_img"];
+		//if never set in storage
+		if(img_num == undefined){
+			img_num = 0;
+			chrome.storage.sync.set({"bg_img": "0"}, function(res){
+				console.log("Image count set to 0!");
+			});
+		}else{
+			//do nothing here
+		}
+		document.body.style.backgroundImage = "url('bg/"+bg_images[img_num]+"')";
+	});
 	 
 
 	 //set notification checkbox
